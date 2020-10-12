@@ -1,0 +1,84 @@
+#macro excel mise en forme
+
+
+
+Sub Process()
+    Dim ws As Worksheet, v
+    For Each ws In ThisWorkbook.Worksheets
+        
+        
+        ws.Columns(1).Delete Shift:=xlUp
+        ws.Rows("1:1").Delete Shift:=xlUp
+
+
+        ws.Columns("A:T").ColumnWidth = 19.86
+        Range("A1:T11").Select
+        Range("T11").Activate
+        With Selection
+            .HorizontalAlignment = xlGeneral
+            .VerticalAlignment = xlBottom
+            .WrapText = True
+            .Orientation = 0
+            .AddIndent = False
+            .IndentLevel = 0
+            .ShrinkToFit = False
+            .ReadingOrder = xlContext
+            .MergeCells = False
+        End With
+        With Selection
+            .HorizontalAlignment = xlCenter
+            .VerticalAlignment = xlBottom
+            .WrapText = True
+            .Orientation = 0
+            .AddIndent = False
+            .IndentLevel = 0
+            .ShrinkToFit = False
+            .ReadingOrder = xlContext
+            .MergeCells = False
+        End With
+        With Selection
+            .HorizontalAlignment = xlCenter
+            .VerticalAlignment = xlCenter
+            .WrapText = True
+            .Orientation = 0
+            .AddIndent = False
+            .IndentLevel = 0
+            .ShrinkToFit = False
+            .ReadingOrder = xlContext
+            .MergeCells = False
+        End With
+        Selection.Borders(xlDiagonalDown).LineStyle = xlNone
+        Selection.Borders(xlDiagonalUp).LineStyle = xlNone
+        With Selection.Borders(xlEdgeLeft)
+            .LineStyle = xlContinuous
+            .ColorIndex = 0
+            .TintAndShade = 0
+            .Weight = xlThin
+        End With
+        With Selection.Borders(xlEdgeTop)
+            .LineStyle = xlContinuous
+            .ColorIndex = 0
+            .TintAndShade = 0
+            .Weight = xlThin
+        End With
+        With Selection.Borders(xlEdgeBottom)
+            .LineStyle = xlContinuous
+            .ColorIndex = 0
+            .TintAndShade = 0
+            .Weight = xlThin
+        End With
+        With Selection.Borders(xlEdgeRight)
+            .LineStyle = xlContinuous
+            .ColorIndex = 0
+            .TintAndShade = 0
+            .Weight = xlThin
+        End With
+        With Selection.Borders(xlInsideVertical)
+            .LineStyle = xlContinuous
+            .ColorIndex = 0
+            .TintAndShade = 0
+            .Weight = xlThin
+        End With
+
+    Next ws
+End Sub
