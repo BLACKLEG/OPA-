@@ -1,7 +1,3 @@
-#macro excel mise en forme
-
-
-
 Sub Process()
     Dim ws As Worksheet, v
     For Each ws In ThisWorkbook.Worksheets
@@ -11,74 +7,23 @@ Sub Process()
         ws.Rows("1:1").Delete Shift:=xlUp
 
 
-        ws.Columns("A:T").ColumnWidth = 19.86
-        Range("A1:T11").Select
-        Range("T11").Activate
-        With Selection
-            .HorizontalAlignment = xlGeneral
-            .VerticalAlignment = xlBottom
-            .WrapText = True
-            .Orientation = 0
-            .AddIndent = False
-            .IndentLevel = 0
-            .ShrinkToFit = False
-            .ReadingOrder = xlContext
-            .MergeCells = False
-        End With
-        With Selection
-            .HorizontalAlignment = xlCenter
-            .VerticalAlignment = xlBottom
-            .WrapText = True
-            .Orientation = 0
-            .AddIndent = False
-            .IndentLevel = 0
-            .ShrinkToFit = False
-            .ReadingOrder = xlContext
-            .MergeCells = False
-        End With
-        With Selection
-            .HorizontalAlignment = xlCenter
-            .VerticalAlignment = xlCenter
-            .WrapText = True
-            .Orientation = 0
-            .AddIndent = False
-            .IndentLevel = 0
-            .ShrinkToFit = False
-            .ReadingOrder = xlContext
-            .MergeCells = False
-        End With
-        Selection.Borders(xlDiagonalDown).LineStyle = xlNone
-        Selection.Borders(xlDiagonalUp).LineStyle = xlNone
-        With Selection.Borders(xlEdgeLeft)
-            .LineStyle = xlContinuous
-            .ColorIndex = 0
-            .TintAndShade = 0
-            .Weight = xlThin
-        End With
-        With Selection.Borders(xlEdgeTop)
-            .LineStyle = xlContinuous
-            .ColorIndex = 0
-            .TintAndShade = 0
-            .Weight = xlThin
-        End With
-        With Selection.Borders(xlEdgeBottom)
-            .LineStyle = xlContinuous
-            .ColorIndex = 0
-            .TintAndShade = 0
-            .Weight = xlThin
-        End With
-        With Selection.Borders(xlEdgeRight)
-            .LineStyle = xlContinuous
-            .ColorIndex = 0
-            .TintAndShade = 0
-            .Weight = xlThin
-        End With
-        With Selection.Borders(xlInsideVertical)
-            .LineStyle = xlContinuous
-            .ColorIndex = 0
-            .TintAndShade = 0
-            .Weight = xlThin
-        End With
+        ws.Columns("A:S").ColumnWidth = 19.86
+        
+
+        ws.Range("A2:S10").HorizontalAlignment = xlCenter
+        ws.Range("A2:S10").VerticalAlignment = xlCenter
+        ws.Range("A2:S10").WrapText = True
+  
+  
+        ws.Range("A2:S10").Borders(xlEdgeTop).LineStyle = xlContinuous
+        ws.Range("A2:S10").Borders(xlEdgeLeft).LineStyle = xlContinuous
+        ws.Range("A2:S10").Borders(xlEdgeBottom).LineStyle = xlContinuous
+        ws.Range("A2:S10").Borders(xlEdgeRight).LineStyle = xlContinuous
+        ws.Range("A2:S10").Borders(xlInsideVertical).LineStyle = xlContinuous
+        ws.Range("A2:S10").Borders(xlInsideHorizontal).LineStyle = xlContinuous
+
 
     Next ws
+    
 End Sub
+
